@@ -64,7 +64,6 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
 .dark .delta-callout{color:#aaa}
 .phone-shot{justify-self:end;display:block;height:min(72vh,680px);width:auto;max-width:100%;filter:drop-shadow(0 18px 40px rgba(0,0,0,.14))}
 
-/* 03 shift */
 /* 06 parties: SVG, stepped */
 .parties{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
 .parties svg{width:100%;height:100%;max-height:60vh;overflow:visible}
@@ -89,21 +88,24 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
 .h2-step{color:var(--faint);transition:color .6s var(--ease)}
 .slide[data-step="1"] .h2-step{color:var(--ink)}
 
-/* 04 loop */
-.loop-wrap{flex:1;display:flex;align-items:center;justify-content:center}
-.agent-loop{display:grid;grid-template-columns:repeat(4,1fr);width:92%;position:relative}
-.agent-loop::before{content:"";position:absolute;left:8%;right:8%;top:50%;height:1px;background:var(--ink)}
-.loop-step{position:relative;z-index:1;text-align:center}
-.loop-dot{width:clamp(70px,7vw,110px);height:clamp(70px,7vw,110px);border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;margin:auto;background:var(--paper);font:700 clamp(12px,1vw,16px)/1 Carbon,monospace;letter-spacing:.07em;text-transform:uppercase}
-.loop-step:nth-child(4) .loop-dot{background:var(--ink);color:#fff}
-.loop-caption{text-align:center;font-size:clamp(19px,1.8vw,29px);margin-top:-1vh}
+/* 07 loop: SVG, stepped */
+.loop-wrap{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
+.loop-wrap svg{width:100%;height:100%;max-height:58vh;overflow:visible}
+.loop-wrap .ink{stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round}
+.loop-wrap .node{fill:var(--ink)}
+.loop-wrap .lbl{font:700 13px/1 Carbon,monospace;letter-spacing:.16em;text-transform:uppercase;fill:var(--ink)}
+.loop-wrap .close-arc{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .9s var(--ease)}
+.loop-wrap .pulse{fill:var(--ink);opacity:0;transition:opacity .5s .6s}
+.slide[data-step="1"] .close-arc{stroke-dashoffset:0}
+.slide[data-step="1"] .pulse{opacity:1}
+.loop-caption{position:absolute;left:6.2%;bottom:10.5%;font-size:clamp(18px,1.7vw,28px);color:var(--mid);letter-spacing:-.02em}
 
 /* 05 traffic (globe animation, ported from NextGen API deck) */
-.traffic-heading{position:absolute;z-index:3;left:6.2%;top:7.2%;font-size:clamp(35px,4.25vw,70px);line-height:1.02;letter-spacing:-.045em;max-width:9ch}
+.traffic-heading{position:absolute;z-index:3;left:6.2%;top:7.2%;font-size:clamp(35px,4.25vw,70px);line-height:1.02;letter-spacing:-.045em;max-width:14ch}
 .traffic-note{position:absolute;z-index:3;left:6.2%;bottom:8.7%;font:700 clamp(8px,.7vw,11px)/1.3 Carbon,monospace;color:#6d6d6d;letter-spacing:.09em;text-transform:uppercase}
 .audience-lab{--h-s:1;--h-x:56%;--h-y:46%;--h-wire:1;--h-fill:.05;--h-cap:1;--a-s:.22;--a-x:128%;--a-y:48%;--a-o:.06;position:absolute;inset:0;background:#000;color:#fff;overflow:hidden}
 .audience-media{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse 62% 54% at 70% 42%,#141414 0%,#000 70%)}
-.audience-media::before{content:"FIG 05.1";position:absolute;z-index:3;top:28px;right:32px;font:700 10px/1 Carbon,monospace;letter-spacing:.08em;color:#666}
+.fig{position:absolute;z-index:3;top:28px;right:32px;font:700 10px/1 Carbon,monospace;letter-spacing:.08em;text-transform:uppercase;color:#666}
 .audience-stage{position:absolute;inset:0}
 .globe-body{position:absolute;left:0;top:0;will-change:transform;pointer-events:none}
 .globe-svg{display:block;width:100%;height:100%;overflow:visible}
@@ -127,53 +129,57 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
 .mouth .surface{font:700 clamp(17px,1.7vw,28px)/1.25 Carbon,monospace;letter-spacing:.04em;text-transform:uppercase;padding:1.2vh 0;border-bottom:1px solid var(--rule)}
 .mouth .role{margin-top:2.8vh;font-size:clamp(15px,1.2vw,20px);color:var(--mid)}
 
-/* 07 flow */
-.flow-compare{display:grid;grid-template-columns:1fr 1fr;gap:6vw;align-items:center;flex:1}
-.flow-col{height:52%;border-top:1px solid var(--ink);padding-top:2.5vh;position:relative}
-.flow-col .label{font-size:clamp(9px,.75vw,12px);color:var(--mid)}
-.request-line{position:absolute;left:4%;right:4%;top:56%;height:1px;background:var(--ink)}
-.request-line::after{content:"";position:absolute;right:0;top:-4px;border-left:8px solid var(--ink);border-top:4px solid transparent;border-bottom:4px solid transparent}
-.request-labels{position:absolute;left:4%;right:4%;top:47%;display:flex;justify-content:space-between;font-size:clamp(16px,1.45vw,24px)}
-.agent-cycle{position:absolute;left:9%;right:9%;top:32%;bottom:12%;border:1px solid var(--ink);border-radius:50%}
-.agent-cycle::after{content:"";position:absolute;right:5%;top:18%;border-left:9px solid var(--ink);border-top:5px solid transparent;border-bottom:5px solid transparent;transform:rotate(34deg)}
-.cycle-words{position:absolute;inset:0;display:grid;place-items:center;font:700 clamp(11px,1vw,16px)/1.65 Carbon,monospace;letter-spacing:.07em;text-transform:uppercase;text-align:center}
+/* 10 flow: SVG, stepped */
+.flow-wrap{flex:1;display:flex;align-items:center;justify-content:center;min-height:0}
+.flow-wrap svg{width:100%;height:100%;max-height:58vh;overflow:visible}
+.flow-wrap .ink{stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round}
+.flow-wrap .node{fill:var(--ink)}
+.flow-wrap .cap{font:700 12px/1 Carbon,monospace;letter-spacing:.16em;text-transform:uppercase;fill:var(--faint)}
+.flow-wrap .word{font:700 13px/1 Carbon,monospace;letter-spacing:.16em;text-transform:uppercase;fill:var(--ink)}
+.flow-wrap .name{font:400 26px/1 Greycliff,sans-serif;fill:var(--ink)}
+.flow-wrap .sub{font:400 16px/1 Greycliff,sans-serif;fill:var(--mid)}
+.flow-wrap .ring{stroke-dasharray:7 9;animation:ring-flow 2.6s linear infinite}
+@keyframes ring-flow{to{stroke-dashoffset:-32}}
+.flow-wrap .after{opacity:0;transform:translateY(14px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.slide[data-step="1"] .after{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.flow-wrap .ring{animation:none}}
 
-/* 08 already */
-.already{flex:1;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:8vw}
+/* 11 already: directional bars */
+.already{flex:1;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:7vw}
 .already-claim{font-size:clamp(38px,4.5vw,72px);line-height:1.03;letter-spacing:-.045em;max-width:12ch}
-.api-gate{height:48%;border-left:1px solid var(--ink);padding-left:4vw;display:flex;flex-direction:column;justify-content:center;gap:2.3vh}
-.api-gate .job{display:flex;align-items:center;gap:1.2vw;font:700 clamp(12px,1.1vw,18px)/1 Carbon,monospace;letter-spacing:.07em;text-transform:uppercase}
-.api-gate .job::before{content:"";width:2.8vw;height:1px;background:var(--ink)}
+.share{display:flex;flex-direction:column;gap:6.5vh}
+.share-row .share-lbl{display:flex;justify-content:space-between;font:700 clamp(10px,.8vw,13px)/1 Carbon,monospace;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4vh}
+.share-row .share-lbl span:last-child{color:var(--faint)}
+.share-bar{display:block;height:6.2vh;background:var(--ink);width:var(--w);transform-origin:left;transform:scaleX(0)}
+.slide.on .share-bar{animation:bar-grow 1.1s var(--ease) forwards;animation-delay:var(--d,.4s)}
+@keyframes bar-grow{to{transform:scaleX(1)}}
+.share-row.other .share-bar{background:var(--faint)}
 
-/* 09 demand */
-.demand-viz{flex:1;display:flex;align-items:center;justify-content:center}
-.demand-field{width:88%;height:46%;display:flex;align-items:flex-end;gap:.48vw;border-bottom:1px solid var(--ink);padding:0 .4vw;position:relative}
-.demand-bar{width:.22vw;min-width:2px;height:11%;background:var(--ink);transform-origin:bottom;transform:scaleY(0)}
-.slide.on .demand-bar{animation:bar-in .22s steps(1,end) forwards;animation-delay:calc(var(--i) * .045s)}
-.demand-bar.rise{height:var(--h);animation-duration:.45s;animation-delay:calc(1.75s + var(--j) * .12s)}
-@keyframes bar-in{to{transform:scaleY(1)}}
-.demand-tag{position:absolute;left:62%;bottom:-5.5vh;font:700 clamp(9px,.75vw,12px)/1 Carbon,monospace;letter-spacing:.08em;text-transform:uppercase}
-.demand-tag::before{content:"";position:absolute;left:50%;bottom:2.3vh;border-bottom:9px solid var(--ink);border-left:5px solid transparent;border-right:5px solid transparent}
+/* 12 demand: spike, ported from NextGen deck slide 14 */
+.spike{flex:1;position:relative;width:min(80%,940px);aspect-ratio:2708/1252;min-height:0;max-height:52vh;margin:auto}
+.spike-bars{position:absolute;inset:18.5% 11% 32.3% 8.4%;display:flex;align-items:flex-end;justify-content:space-between}
+.spike-bars i{flex:0 0 2px;width:2px;height:var(--h,4%);background:var(--ink);display:block;opacity:0;transform:scaleY(0);transform-origin:center bottom;will-change:transform,opacity}
+.slide.on .spike-bars i{animation:spike-rise var(--dur,160ms) cubic-bezier(.2,.75,.25,1) var(--delay,0ms) both}
+@keyframes spike-rise{from{opacity:0;transform:scaleY(0)}to{opacity:1;transform:scaleY(1)}}
+.spike-mark{position:absolute;left:66.6%;top:72%;transform:translateX(-50%);text-align:center;opacity:0}
+.spike-mark .tri{width:0;height:0;margin:0 auto 20px;border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:12px solid var(--ink)}
+.spike-mark span{font:700 clamp(10px,.85vw,12px)/1 Carbon,monospace;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.slide.on .spike-mark{animation:spike-label 240ms ease 2450ms both}
+@keyframes spike-label{from{opacity:0;transform:translateX(-50%) translateY(6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+@media (prefers-reduced-motion:reduce){.slide.on .spike-bars i,.slide.on .spike-mark{animation:none;opacity:1;transform:none}.slide.on .spike-mark{transform:translateX(-50%)}}
 
-/* 10 wall */
-.wall-stage{display:grid;grid-template-columns:1.2fr .8fr;gap:6vw;align-items:center;flex:1}
-.job-lines{display:flex;flex-direction:column;gap:2.2vh}
-.job-line{display:grid;grid-template-columns:8.7rem 1fr auto;align-items:center;gap:1.3vw;font-size:clamp(14px,1.25vw,20px)}
-.job-line .track{height:1px;background:var(--ink)}
-.job-line .stop{font:700 clamp(9px,.72vw,12px)/1 Carbon,monospace;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--ink);padding:.8vh .7vw;background:var(--paper)}
-.settings-wall{border-left:5px solid var(--ink);padding-left:3vw}
-.settings-wall .big{font-size:clamp(34px,3.7vw,60px);line-height:1.02;letter-spacing:-.04em}
-.settings-wall .small{margin-top:2.5vh;max-width:26ch}
-
-/* 11 workstreams */
-.workstreams{flex:1;display:grid;grid-template-columns:repeat(5,1fr);align-items:center;gap:1.2vw;position:relative}
-.workstreams::before{content:"";position:absolute;left:6%;right:6%;top:50%;height:1px;background:var(--rule)}
-.work{position:relative;z-index:1;background:var(--paper);min-height:27vh;padding:2.3vh 1.2vw;border-top:2px solid var(--ink);opacity:0;transform:translateY(20px)}
-.slide.on .work{animation:assemble .65s var(--ease) forwards;animation-delay:calc(var(--i) * .25s)}
+/* 14 workstreams: stepped */
+.workstreams{flex:1;display:grid;grid-template-columns:repeat(5,1fr);align-content:center;gap:1.4vw;padding-bottom:6vh}
+.work{position:relative;padding:2.2vh 0 0;border-top:2px solid var(--ink);opacity:0;transform:translateY(20px);transition:color .7s var(--ease),border-color .7s var(--ease)}
+.slide.on .work{animation:assemble .65s var(--ease) forwards;animation-delay:calc(var(--i) * .22s)}
 @keyframes assemble{to{opacity:1;transform:none}}
 .work .step-no{font-size:clamp(9px,.72vw,12px);color:var(--mid)}
-.work h3{font-size:clamp(18px,1.55vw,26px);line-height:1.08;margin-top:9vh}
-.work p{margin-top:1.5vh;font-size:clamp(12px,.95vw,16px);color:var(--mid);line-height:1.3}
+.work h3{font-size:clamp(18px,1.55vw,26px);line-height:1.08;margin-top:2.4vh;letter-spacing:-.02em}
+.work p{margin-top:1.4vh;font-size:clamp(12px,.95vw,16px);color:var(--mid);line-height:1.3}
+.work.last{color:var(--faint);border-top-color:var(--rule)}
+.work.last .step-no,.work.last p{color:inherit}
+.slide[data-step="1"] .work.last{color:var(--ink);border-top-color:var(--ink)}
+.slide[data-step="1"] .work.last .step-no,.slide[data-step="1"] .work.last p{color:var(--mid)}
 
 /* 12 gaps */
 .gap-list{width:84%;margin:auto 0;align-self:center}
@@ -183,12 +189,16 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
 .gap-row .gap-name{font-size:clamp(20px,2vw,32px)}
 .gap-row .gap-now{font:700 clamp(9px,.72vw,12px)/1 Carbon,monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mid)}
 
-/* 13 cap/foundation */
-.split-foundation{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center;flex:1}
-.split-side{border-top:1px solid var(--ink);padding-top:2.7vh}
-.split-side .cap{font-size:clamp(9px,.75vw,12px);color:var(--mid)}
-.split-side h3{font-size:clamp(30px,3vw,48px);margin:2.5vh 0 4vh;letter-spacing:-.035em}
-.split-side .line{padding:1.1vh 0;border-bottom:1px solid var(--rule);font:700 clamp(11px,.9vw,15px)/1 Carbon,monospace;letter-spacing:.075em;text-transform:uppercase}
+/* 16 capabilities on foundations */
+.stack{flex:1;display:flex;flex-direction:column;justify-content:center;gap:0}
+.stack .tier-lbl{display:flex;align-items:baseline;gap:1.4vw;font:700 clamp(9px,.75vw,12px)/1 Carbon,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+.stack .tier-lbl em{font:400 clamp(13px,1.05vw,17px)/1 Greycliff,sans-serif;letter-spacing:0;text-transform:none;color:var(--mid)}
+.caps{display:grid;grid-template-columns:repeat(3,1fr);gap:2vw;margin:2.4vh 0 3.2vh}
+.caps div{font-size:clamp(20px,2vw,32px);letter-spacing:-.03em;line-height:1.1}
+.slab{background:var(--ink);color:#fff;display:grid;grid-template-columns:repeat(3,1fr);gap:2vw;padding:3.4vh 2.2vw;font:700 clamp(11px,.95vw,15px)/1 Carbon,monospace;letter-spacing:.12em;text-transform:uppercase;transform-origin:top;transform:scaleY(0)}
+.slide.on .slab{animation:bar-grow-y .8s var(--ease) .55s forwards}
+@keyframes bar-grow-y{to{transform:scaleY(1)}}
+.stack .tier-lbl.under{margin-top:2.4vh}
 
 /* 14 thesis */
 .thesis{justify-content:center}
@@ -203,10 +213,45 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
 .close h1{font-size:clamp(48px,6.2vw,100px);max-width:14ch}
 .close h1 span{font-weight:400;color:#555}
 
+/* 19-24 ported from NextGen deck */
+.sub{font-size:clamp(15px,1.35vw,20px);color:var(--mid);line-height:1.4;max-width:46ch;margin-top:2.4vh}
+.exhibit{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;margin:3vh 0 2vh}
+.exhibit img{display:block;max-width:100%;max-height:100%;object-fit:contain}
+.exhibit.tall{justify-content:flex-end}
+.exhibit.tall img{max-height:64vh;border:1px solid var(--rule)}
+.exhibit.wide img{width:min(88%,1100px);filter:drop-shadow(0 14px 34px rgba(0,0,0,.10))}
+.exhibit.panel img{width:min(82%,1040px);border:1px solid var(--rule)}
+.devx{display:grid;grid-template-columns:.9fr 1.1fr;gap:4vw;flex:1;min-height:0;align-items:center}
+.devx .exhibit{margin:0;height:100%}
+.vtable{flex:1;display:grid;grid-template-columns:8rem 1.35fr 1fr;align-content:center;column-gap:2.4vw;margin-top:2vh}
+.vtable>div{padding:2.1vh 0;border-top:1px solid var(--rule);font-size:clamp(13px,1.15vw,17px);line-height:1.4;color:var(--ink)}
+.vtable>.th{font:700 clamp(9px,.75vw,12px)/1 Carbon,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);border-top:0;padding-bottom:1vh}
+.vtable>.layer{font:700 clamp(12px,1vw,15px)/1.4 Carbon,monospace;letter-spacing:.12em;text-transform:uppercase}
+.vtable>.st{color:var(--mid)}
+.vtable>div:nth-last-child(-n+3){border-bottom:1px solid var(--rule)}
+.onboard{flex:1;display:flex;flex-direction:column;justify-content:center;gap:0}
+.onboard-steps{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:1.4vw;padding-top:3.2vh}
+.onboard-steps::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--ink)}
+.onboard-step{position:relative}
+.onboard-step::before{content:"";position:absolute;left:0;top:calc(-3.2vh - 4px);width:9px;height:9px;border-radius:50%;background:var(--ink)}
+.onboard-step .n{display:block;font:700 clamp(9px,.75vw,12px)/1 Carbon,monospace;letter-spacing:.14em;color:var(--mid);margin-bottom:1.6vh}
+.onboard-step .t{font-size:clamp(15px,1.5vw,23px);letter-spacing:-.025em;line-height:1.15}
+.onboard-outcome{margin-top:7vh;font:700 clamp(11px,1vw,15px)/1 Carbon,monospace;letter-spacing:.14em;text-transform:uppercase}
+.phases{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:1.6vw;align-content:center}
+.phase{border-top:2px solid var(--ink);padding-top:2vh}
+.phase .lab{font:700 clamp(9px,.75vw,12px)/1 Carbon,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mid)}
+.phase h3{font-size:clamp(17px,1.5vw,25px);letter-spacing:-.025em;line-height:1.15;margin:1.8vh 0 1.6vh}
+.phase ul{list-style:none;padding:0}
+.phase li{font-size:clamp(12px,1.02vw,16px);color:var(--mid);line-height:1.35;padding:.9vh 0;border-top:1px solid var(--rule)}
+
 /* chrome */
 .progress{position:absolute;z-index:30;left:0;top:0;height:3px;background:var(--ink);width:0;transition:width .18s ease}
 .dark.on~.progress,.stage:has(.dark.on)>.progress{background:#fff}
-.controls{position:absolute;z-index:40;right:2.3%;bottom:2.2%;display:flex;gap:.55vw}
+.controls{position:absolute;z-index:40;right:2.3%;bottom:2.2%;display:flex;gap:.55vw;transition:opacity .4s ease}
+.stage.idle .controls{opacity:0;pointer-events:none}
+.stage:fullscreen .controls{display:none}
+.stage:fullscreen{cursor:none}
+.stage:fullscreen:not(.idle){cursor:default}
 .control{appearance:none;border:1px solid #cfcfcd;background:rgba(253,253,252,.92);color:#777;padding:.8vh .75vw;font-size:clamp(8px,.6vw,10px);cursor:pointer}
 .stage:has(.dark.on) .control{background:rgba(9,9,9,.85);border-color:#333;color:#888}
 .control:hover,.control:focus-visible{color:var(--ink);border-color:var(--ink);outline:none}
@@ -222,6 +267,120 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
 .help-grid kbd{font:700 12px/1 Carbon,monospace;text-transform:uppercase;border:1px solid #555;padding:.7vh .7vw;text-align:center}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-delay:0ms!important;transition-duration:.001ms!important}.slide.on .demand-bar{transform:scaleY(1)}.slide.on .work{opacity:1;transform:none}.thesis-lines span{color:#fff!important;transform:none!important}}
 </style>
+<style id="theme">
+/* Theme: Signal — white, layout grid, purple accent */
+:root{--ink:#0a0a0a;--paper:#ffffff;--mid:#5c5c5c;--faint:#a3a3a3;--rule:#e9e9e9;--wash:#f4f4f4;--acc:#5b3df5}
+html,body{background:#f0f0f0}
+.stage{background-color:var(--paper);background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px);background-size:6.25% 11.111%;background-position:-1px -1px}
+.slide{background:transparent}
+.slide.dark{background:var(--ink);color:#fff}
+h2{font-size:clamp(34px,3.7vw,62px);letter-spacing:-.045em;max-width:17ch}
+.kicker{color:var(--acc);font-weight:700}
+.dark .kicker{color:#a998ff}
+.big-no{position:absolute;right:6.2%;top:5.4%;font:700 clamp(22px,2.4vw,40px)/1 Greycliff,sans-serif;letter-spacing:-.04em;color:var(--acc);z-index:5}
+.dark .big-no{color:#a998ff}
+.d4-eq .four{background:var(--acc);color:#fff}
+.share-bar{background:var(--acc)}.share-row.other .share-bar{background:#cfcfcf}
+.progress{background:var(--acc);height:4px}.stage:has(.dark.on)>.progress{background:#a998ff}
+.loop-wrap .pulse{fill:var(--acc)}
+.onboard-step::before{background:var(--acc)}
+.spike-mark .tri{border-bottom-color:var(--acc)}.spike-mark span{color:var(--acc)}
+.slide[data-step="1"] .work.last{border-top-color:var(--acc)}.slide[data-step="1"] .work.last h3{color:var(--acc)}
+.slide[data-step="1"] .h2-step{color:var(--acc)}
+.parties .g-agent .fill{fill:var(--acc)}.parties .orbit{stroke:var(--acc)}
+.flow-wrap .ring{stroke:var(--acc)}
+.slab{background:var(--acc)}
+.thesis-lines span{color:#555}.thesis-lines span:nth-child(3){color:#a998ff}
+@keyframes thesis-on{to{color:#fff;transform:translateX(1.2vw)}}
+.close h1 span{color:var(--acc)}
+.phone-shot{filter:drop-shadow(0 18px 40px rgba(91,61,245,.18))}
+.control{border-color:#dcdcdc;background:rgba(255,255,255,.95)}
+.tweet-shot,.exhibit.tall img,.exhibit.panel img{border-color:#dcdcdc}
+.footer{color:#a3a3a3}
+</style>
+<style id="theme-type">
+/* Type: Carbon Bold, all caps */
+/* Variant F: Signal + Carbon Bold, all caps */
+html,body,.slide,button{font-family:Carbon,monospace;font-weight:700}
+.slide{text-transform:uppercase}
+.slide svg text{text-transform:uppercase}
+.parties .sub,.flow-wrap .name,.flow-wrap .sub,.stack .tier-lbl em,.lede,.small,.sub,.d4-scale,.delta-callout,.loop-caption,.work p,.phase li,.d4-fx p,.settings-wall .small,.onboard-step .t,.caps div,.gap-name,.vtable>div,.share-lbl,.job-line{font-family:Carbon,monospace;font-weight:700}
+h1,h2,h3{letter-spacing:.01em;line-height:1.14}
+h2{font-size:clamp(22px,2.45vw,40px);max-width:30ch;margin-bottom:.4vh}
+.title-slide h1{font-size:clamp(40px,5.4vw,88px);letter-spacing:0;line-height:1}
+.lede{font-size:clamp(13px,1.15vw,18px);letter-spacing:.06em;color:var(--mid)}
+.sub{font-size:clamp(11px,.98vw,15px);letter-spacing:.06em;max-width:56ch;margin-top:2vh}
+.delta-callout{font-size:clamp(14px,1.35vw,22px);letter-spacing:.04em;max-width:30ch;line-height:1.35}
+.loop-caption{font-size:clamp(12px,1.1vw,17px);letter-spacing:.06em}
+.already-claim{font-size:clamp(28px,3.1vw,52px);letter-spacing:.01em;line-height:1.1;max-width:14ch}
+.thesis-lines{font-size:clamp(30px,4.1vw,68px);letter-spacing:.01em;line-height:1.14}
+.close h1{font-size:clamp(30px,4.1vw,68px);letter-spacing:.01em;max-width:20ch;line-height:1.1}
+.d4-eq{font-size:clamp(48px,5.8vw,94px)}
+.d4-scale{font-size:clamp(11px,.95vw,14px);letter-spacing:.06em;max-width:48ch}
+.d4-fx>div{padding:4.2vh 0;align-items:center}
+.d4-fx h3{font-size:clamp(15px,1.5vw,24px);letter-spacing:.06em}
+.d4{align-items:center}
+.h2-step{display:block}
+.parties .sub,.flow-wrap .sub{font-size:12px;letter-spacing:.1em}
+.flow-wrap .name{font-size:18px;letter-spacing:.1em}
+.caps div{font-size:clamp(14px,1.35vw,22px);letter-spacing:.06em}
+.gap-row .gap-name{font-size:clamp(14px,1.35vw,22px);letter-spacing:.06em}
+.gap-row .gap-now{letter-spacing:.14em}
+.work h3{font-size:clamp(12px,1.1vw,17px);letter-spacing:.06em;line-height:1.3}
+.work p{font-size:clamp(9px,.8vw,12px);letter-spacing:.06em;line-height:1.5}
+.phase h3{font-size:clamp(12px,1.1vw,17px);letter-spacing:.06em;line-height:1.3}
+.phase li{font-size:clamp(9px,.82vw,12px);letter-spacing:.06em;line-height:1.5;padding:1.3vh 0}
+.onboard-step .t{font-size:clamp(11px,1.05vw,16px);letter-spacing:.06em;line-height:1.35}
+.onboard-outcome{letter-spacing:.14em}
+.vtable>div{font-size:clamp(10px,.9vw,13px);letter-spacing:.05em;line-height:1.55}
+.vtable>.layer{letter-spacing:.14em}
+.share-row .share-lbl{letter-spacing:.14em}
+.source{letter-spacing:.1em}
+.traffic-heading{font-family:Carbon,monospace;font-size:clamp(24px,2.8vw,46px);letter-spacing:.01em;line-height:1.14;max-width:16ch}
+.exhibit img{image-rendering:auto}
+.control{font-weight:700}
+.notes-panel p{text-transform:none;font-family:Greycliff,sans-serif;font-weight:400}
+.help{text-transform:none}
+</style>
+<style id="theme-readability">
+/* Readability floor: last row of a conference hall */
+.kicker{font-size:clamp(11px,1vw,16px)}
+.source{font-size:clamp(10px,.9vw,14px)}
+.sub{font-size:clamp(14px,1.3vw,20px);max-width:52ch}
+.lede{font-size:clamp(15px,1.4vw,22px)}
+.delta-callout{font-size:clamp(17px,1.7vw,27px)}
+.loop-caption{font-size:clamp(14px,1.3vw,20px)}
+.d4-fx h3{font-size:clamp(18px,1.8vw,29px)}
+.d4-scale{font-size:clamp(13px,1.2vw,18px)}
+.d4-fx .step-no,.gap-row .step-no,.work .step-no,.onboard-step .n,.phase .lab,.vtable>.th,.stack .tier-lbl{font-size:clamp(11px,1vw,15px)}
+.workstreams{gap:2vw}
+.work h3{font-size:clamp(17px,1.7vw,27px);line-height:1.25}
+.work p{font-size:clamp(13px,1.2vw,18px);line-height:1.45;margin-top:1.8vh}
+.gap-row .gap-name{font-size:clamp(19px,1.95vw,31px)}
+.gap-row .gap-now{font-size:clamp(11px,1.05vw,16px)}
+.gap-row{padding:3vh 0}
+.caps div{font-size:clamp(17px,1.7vw,27px)}
+.slab{font-size:clamp(13px,1.2vw,18px)}
+.stack .tier-lbl em{font-size:clamp(13px,1.2vw,18px)}
+.vtable{grid-template-columns:9rem 1.35fr 1fr;column-gap:3vw}
+.vtable>div{font-size:clamp(14px,1.3vw,20px);line-height:1.5;padding:2.6vh 0}
+.vtable>.layer{font-size:clamp(14px,1.3vw,20px)}
+.onboard-step .t{font-size:clamp(14px,1.35vw,21px)}
+.onboard-outcome{font-size:clamp(13px,1.2vw,18px)}
+.phase h3{font-size:clamp(16px,1.55vw,25px);line-height:1.3}
+.phase li{font-size:clamp(13px,1.2vw,18px);line-height:1.5;padding:1.6vh 0}
+.share-row .share-lbl{font-size:clamp(12px,1.1vw,17px)}
+.spike-mark span{font-size:clamp(12px,1.1vw,17px)}
+.traffic-note{font-size:clamp(10px,.9vw,14px)}
+.globe-label{font-size:14px}.label-human{font-size:12px}.label-agent{font-size:15px}
+.parties .lbl,.loop-wrap .lbl,.flow-wrap .word{font-size:17px}
+.parties .sub,.flow-wrap .sub{font-size:15px}
+.flow-wrap .name{font-size:23px}.flow-wrap .cap{font-size:14px}
+.parties svg{max-height:64vh}.loop-wrap svg{max-height:60vh}
+.d4-fx .step-no{font-size:clamp(11px,1vw,15px)}
+.exhibit.tall img{max-height:66vh}
+.stack .tier-lbl em{text-transform:uppercase;letter-spacing:.08em}
+</style>
 </head>
 <body>
 <main class="stage" id="stage" aria-live="polite">
@@ -232,7 +391,7 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
     <p class="lede" data-reveal style="--d:.28s">Initial thoughts and direction</p>
     <div class="thesis-preview carbon" data-reveal style="--d:.42s"><span>MCP discovers</span><span>APIs execute</span><span>Identity makes it safe</span></div>
     <aside class="notes-src">I want to start with the future we are designing for, then pull that future back into the work in front of us. API Mission is not an MCP project and this is not a roadmap dump. Our early direction is simple: finish reliable software jobs, make authority explicit, and let agents discover those jobs only after the contract is ready. The rest of the talk explains why that order matters.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">01 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">01 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="2">
@@ -244,14 +403,14 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
         <p class="d4-scale" data-reveal style="--d:.28s">Score the old way and the new way for efficiency, 1 to 10. Subtract. Clear four and three things follow.</p>
       </div>
       <div class="d4-fx" data-reveal style="--d:.36s">
-        <div><span class="step-no">01</span><div><h3>Behaviour becomes irreversible</h3><p>Nobody goes back to the old way.</p></div></div>
-        <div><span class="step-no">02</span><div><h3>Users forgive your mistakes</h3><p>Broken parts are tolerated. Deleting the app is not an option.</p></div></div>
-        <div><span class="step-no">03</span><div><h3>Users brag about it</h3><p>A Unique Brag-worthy Proposition. Word of mouth outruns the USP.</p></div></div>
+        <div><span class="step-no">01</span><div><h3>Behaviour becomes irreversible</h3></div></div>
+        <div><span class="step-no">02</span><div><h3>Users forgive your mistakes</h3></div></div>
+        <div><span class="step-no">03</span><div><h3>Users brag about it</h3></div></div>
       </div>
     </div>
     <div class="source">Kunal Shah · The Knowledge Project, ep. 141</div>
     <aside class="notes-src">Before the example, the frame. Kunal Shah scores the old way of doing a job and the new way, each out of ten for efficiency, and subtracts. When the gap is four or more, three things happen. Behaviour becomes irreversible: nobody returns to the old method. Users tolerate mistakes: parts of the new product can be broken and they still stay. And users brag: the product earns a Unique Brag-worthy Proposition, and word of mouth starts to matter more than the selling proposition. Keep those three in mind. They are the test for whether a software-operated path is worth building.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">02 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">02 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="3">
@@ -264,21 +423,21 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
     </div>
     <div class="source">Illustrative example. Screenshot: Uber app, uber.com.</div>
     <aside class="notes-src">Now the example everyone knows. Hailing a taxi on the street scores about three out of ten. Requesting an Uber scores about nine. The delta is six, well past four, and all three effects showed up: nobody went back to the kerb, people tolerated surge pricing and cancelled drivers, and Uber spread by word of mouth. The scores are illustrative. The point is that an interface can reset expectations for a whole category. Once you can ask software to finish a job, a click path can begin to feel like standing on the street waiting for a cab.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">03 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">03 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="4">
     <div class="kicker">04 / Delta 4 in practice</div>
     <div class="solo"><img class="tweet-shot" src="./assets/chatgpt-tweet.jpg" alt="Sam Altman tweet, 30 November 2022: today we launched ChatGPT. try talking with it here: chat.openai.com" data-reveal style="--d:.18s"></div>
         <aside class="notes-src">Second example, closer to home. On 30 November 2022 Sam Altman posted one line: today we launched ChatGPT, try talking with it. Score the old way of getting an answer from software, a search box and ten blue links, and score asking a question in plain language and getting the answer back. The delta cleared four. All three effects followed: people did not go back, they tolerated hallucinations and outages, and they showed it to everyone they knew. That is the behaviour shift we are designing for. The people who work with Shippit have already had their Delta 4 moment with conversational software.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">04 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">04 / 22</span></div>
   </section>
 
   <section class="slide dark" data-slide="5">
     <div class="kicker">05 / Delta 4 in practice</div>
     <div class="solo"><img class="reply-shot" src="./assets/chatgpt-reply.jpg" alt="Reply to Sam Altman's ChatGPT launch tweet from Raj K: love the ambition and thesis, but given the current tech, i'd say it's your worst product concept so far." data-reveal style="--d:.18s"></div>
         <aside class="notes-src">And here is the reply underneath that tweet. A reasonable, informed person looked at the same launch and called it the worst product concept so far. He was scoring the technology as it stood: hallucinations, no memory, no tools. Users were scoring something else, the gap between typing a question and getting an answer versus everything they had done before. That gap cleared four, so the flaws were forgiven. Remember this when we look at agents operating Shippit. The current tech will be criticised, correctly, on many points. The question that predicts behaviour is the delta, not the defect list.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">05 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">05 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="6" data-steps="1">
@@ -308,27 +467,32 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
       </svg>
     </div>
     <aside class="notes-src">For years there were two parties on the customer side. A person opened Shippit and clicked. An engineer wrote code against the API once and left it running. Click. A third party has arrived: software that reads context, chooses a tool, acts, and checks the result, on the customer's behalf and without a fixed integration. Humans remain accountable. What changes is how much of the path software operates. API Mission exists because this third party is far less tolerant of ambiguity than a person clicking around a screen.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">06 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">06 / 22</span></div>
   </section>
 
-
-  <section class="slide" data-slide="7">
-    <div class="kicker">04 / Agents, plainly</div>
+  <section class="slide" data-slide="7" data-steps="1">
+    <div class="kicker">07 / Agents, plainly</div>
     <h2 data-reveal style="--d:.06s">An agent keeps going until the job is done</h2>
-    <div class="loop-wrap"><div class="agent-loop">
-      <div class="loop-step" data-reveal style="--d:.14s"><div class="loop-dot">Read</div></div>
-      <div class="loop-step" data-reveal style="--d:.24s"><div class="loop-dot">Choose</div></div>
-      <div class="loop-step" data-reveal style="--d:.34s"><div class="loop-dot">Act</div></div>
-      <div class="loop-step" data-reveal style="--d:.44s"><div class="loop-dot">Check</div></div>
-    </div></div>
-    <p class="loop-caption" data-reveal style="--d:.54s">A clear tool path becomes the product</p>
+    <div class="loop-wrap" data-reveal style="--d:.18s">
+      <svg viewBox="0 0 1200 520" aria-label="Read, choose, act, check, drawn as a loop that closes on click">
+        <path class="ink" d="M600 80A170 170 0 1 1 430 250"/>
+        <path class="ink close-arc" pathLength="1" d="M430 250A170 170 0 0 1 600 80"/>
+        <circle class="node" cx="600" cy="80" r="6"/><circle class="node" cx="770" cy="250" r="6"/><circle class="node" cx="600" cy="420" r="6"/><circle class="node" cx="430" cy="250" r="6"/>
+        <text class="lbl" x="600" y="48" text-anchor="middle">Read</text>
+        <text class="lbl" x="800" y="255" text-anchor="start">Choose</text>
+        <text class="lbl" x="600" y="466" text-anchor="middle">Act</text>
+        <text class="lbl" x="400" y="255" text-anchor="end">Check</text>
+        <circle class="pulse" r="5"><animateMotion dur="5s" repeatCount="indefinite" path="M600 80A170 170 0 1 1 430 250A170 170 0 0 1 600 80"/></circle>
+      </svg>
+    </div>
+    <p class="loop-caption" data-reveal style="--d:.3s">To an agent, the tool path is the product.</p>
     <aside class="notes-src">An agent is not just a chatbot. It reads context, chooses a tool, acts, checks the result, and keeps going. That loop is familiar engineering. The important difference is that the software may invent a path when we have not provided one. If our contract is incomplete or inconsistent, the agent does not politely wait for the next quarter. It scrapes, guesses, asks a human, or fails.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">07 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">07 / 22</span></div>
   </section>
 
   <section class="slide dark full" data-slide="8" data-traffic>
       <div class="audience-lab" id="audienceLab" data-active="1">
-    <figure class="audience-media">
+    <figure class="audience-media"><span class="fig">Fig</span>
       <div class="audience-stage">
         <div class="globe-body body-agent">
                 <svg class="globe-svg" viewBox="-118 -118 236 236" aria-hidden="true">
@@ -377,121 +541,193 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
     <h2 class="traffic-heading">Agent traffic will dwarf human traffic</h2>
     <div class="traffic-note">Directional · illustrative · not measured Shippit volume</div>
     <aside class="notes-src">This visual is directional, not a volume forecast. A human visits documentation deliberately and acts serially. Agents can retrieve continuously, work in parallel, and repeat. The recognisable human audience does not disappear. It becomes the visible speck beside a much larger software audience. That scale changes the cost of ambiguity, weak rate limits, inconsistent errors, and unclear identity.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">08 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">08 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="9">
-    <div class="kicker">06 / Familiar tools win</div>
-    <h2 data-reveal style="--d:.06s">The job stays. The interface changes.</h2>
-    <div class="mouths">
-      <div class="mouth" data-reveal style="--d:.18s"><div class="who">Builder</div><div class="surface">CLI</div><div class="surface">Code editor</div><div class="surface">API</div><p class="role">Shippit UI is optional</p></div>
-      <div class="mouth" data-reveal style="--d:.3s"><div class="who">Operator</div><div class="surface">Claude</div><div class="surface">ChatGPT</div><div class="surface">MCP</div><p class="role">Shippit UI becomes the comfort check</p></div>
+    <div class="kicker">09 / Developer experience</div>
+    <div class="devx">
+      <div>
+        <h2 data-reveal style="--d:.06s">Developer experience will change.</h2>
+        <p class="sub" data-reveal style="--d:.16s">Fewer humans will read the docs. Shopify already lists Agents beside Apps and Storefronts.</p>
+      </div>
+      <div class="exhibit tall" data-reveal style="--d:.22s"><img src="./assets/devx-docs.png" alt="Shopify developer docs, annotated: Agents is a top-level surface alongside Apps and Storefronts"></div>
     </div>
-    <aside class="notes-src">People stay in environments where they feel competent. Builders choose a terminal, editor, and API. Operators increasingly choose conversational tools. These are different mouths over the same jobs. We should not collapse CLI and MCP into one audience. We should build a dependable job layer underneath both, while the Shippit UI remains a useful checker rather than the only place work can finish.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">09 / 18</span></div>
+    <aside class="notes-src">Developer Experience will change. Fewer humans will read the docs. Shopify already lists Agents beside Apps and Storefronts.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">09 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="10">
-    <div class="kicker">07 / Request and response</div>
-    <h2 data-reveal style="--d:.06s">Integration was an event. Operation becomes continuous.</h2>
-    <div class="flow-compare">
-      <div class="flow-col" data-reveal style="--d:.18s"><div class="label">Before</div><div class="request-labels"><span>System</span><span>Shippit</span></div><div class="request-line"></div><p class="small" style="position:absolute;bottom:0">One engineer. One integration.</p></div>
-      <div class="flow-col" data-reveal style="--d:.3s"><div class="label">After</div><div class="agent-cycle"><div class="cycle-words">Discover<br>Act<br>Check<br>Repeat</div></div><p class="small" style="position:absolute;bottom:0">Many operators. Repeated interactions.</p></div>
-    </div>
-    <aside class="notes-src">The old mental model was one engineering event: connect a WMS to Shippit, then leave it alone. The next model is repeated operation. Developers, operators, partners, finance teams, and agents can all initiate jobs through governed software surfaces. This expands the value of the API beyond integration plumbing. It becomes the operational surface of the product.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">10 / 18</span></div>
+    <div class="kicker">10 / Operator experience</div>
+    <h2 data-reveal style="--d:.06s">Operator experience will change.</h2>
+    <p class="sub" data-reveal style="--d:.16s">Nobody calls support to change store hours. They ask Claude.</p>
+    <div class="exhibit wide" data-reveal style="--d:.24s"><img src="./assets/mcp-prompt.png" alt="Claude prompt: change store hours of all Melbourne stores to shut for next week at 7PM, in Shippit settings, using the store settings MCP"></div>
+    <aside class="notes-src">Operator Experiences will change. Don't call support, let Claude do it. MCP prompt as evidence of the shift.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">10 / 22</span></div>
   </section>
 
-  <section class="slide" data-slide="11">
-    <div class="kicker">08 / The opportunity is already here</div>
-    <div class="already">
-      <div class="already-claim" data-reveal style="--d:.08s">Most orders are already created through API today</div>
-      <div class="api-gate" data-reveal style="--d:.22s"><div class="job">Create</div><div class="job">Quote</div><div class="job">Book</div><div class="job">Track</div></div>
+  <section class="slide" data-slide="11" data-steps="1">
+    <div class="kicker">11 / Request and response</div>
+    <h2 data-reveal style="--d:.06s">Traditional software flow will change</h2>
+    <div class="flow-wrap" data-reveal style="--d:.18s">
+      <svg viewBox="0 0 1200 520" aria-label="Before: one system calls Shippit once. After: discover, act, check, repeat, continuously">
+        <g class="before">
+          <text class="cap" x="60" y="70">Before</text>
+          <text class="name" x="60" y="262">System</text>
+          <path class="ink" d="M180 250H448"/><path class="ink" d="M314 240v20"/>
+          <path class="node" d="M448 244l12 6-12 6z"/>
+          <text class="name" x="476" y="262">Shippit</text>
+          <text class="sub" x="60" y="440">One engineer. One integration.</text>
+        </g>
+        <g class="after">
+          <text class="cap" x="680" y="70">After</text>
+          <circle class="ink ring" cx="900" cy="255" r="118"/>
+          <text class="word" x="900" y="110" text-anchor="middle">Discover</text>
+          <text class="word" x="1042" y="260" text-anchor="start">Act</text>
+          <text class="word" x="900" y="408" text-anchor="middle">Check</text>
+          <text class="word" x="758" y="260" text-anchor="end">Repeat</text>
+          <text class="sub" x="680" y="440">Many operators. Repeated interactions.</text>
+        </g>
+      </svg>
     </div>
-    <div class="source">Qualitative internal fact. Exact percentage intentionally omitted pending validation.</div>
-    <aside class="notes-src">This is not a greenfield AI bet. Most orders already enter Shippit through APIs. The commercial pipe is already machine led. Agents do not create this dependency. They amplify the gap between the strong create path and the control work that still requires a screen, an internal tool, or support. That is why the opportunity is broader than shipping a new chat interface.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">11 / 18</span></div>
+    <aside class="notes-src">The old mental model was one engineering event: connect a WMS to Shippit, then leave it alone. The next model is repeated operation. Developers, operators, partners, finance teams, and agents can all initiate jobs through governed software surfaces. This expands the value of the API beyond integration plumbing. It becomes the operational surface of the product.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">11 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="12">
-    <div class="kicker">09 / Demand arrives late</div>
-    <h2 data-reveal style="--d:.06s">Customers may stay quiet until the new path feels obvious</h2>
-    <div class="demand-viz"><div class="demand-field" aria-label="Illustrative quiet demand followed by a sudden increase">
-      <i class="demand-bar" style="--i:0"></i><i class="demand-bar" style="--i:1"></i><i class="demand-bar" style="--i:2"></i><i class="demand-bar" style="--i:3"></i><i class="demand-bar" style="--i:4"></i><i class="demand-bar" style="--i:5"></i><i class="demand-bar" style="--i:6"></i><i class="demand-bar" style="--i:7"></i><i class="demand-bar" style="--i:8"></i><i class="demand-bar" style="--i:9"></i><i class="demand-bar" style="--i:10"></i><i class="demand-bar" style="--i:11"></i><i class="demand-bar" style="--i:12"></i><i class="demand-bar" style="--i:13"></i><i class="demand-bar" style="--i:14"></i><i class="demand-bar" style="--i:15"></i><i class="demand-bar" style="--i:16"></i><i class="demand-bar" style="--i:17"></i><i class="demand-bar" style="--i:18"></i><i class="demand-bar" style="--i:19"></i><i class="demand-bar" style="--i:20"></i><i class="demand-bar" style="--i:21"></i><i class="demand-bar" style="--i:22"></i><i class="demand-bar" style="--i:23"></i><i class="demand-bar rise" style="--j:0;--h:16%"></i><i class="demand-bar rise" style="--j:1;--h:23%"></i><i class="demand-bar rise" style="--j:2;--h:34%"></i><i class="demand-bar rise" style="--j:3;--h:49%"></i><i class="demand-bar rise" style="--j:4;--h:69%"></i><i class="demand-bar rise" style="--j:5;--h:94%"></i>
-      <div class="demand-tag">The category becomes real</div>
-    </div></div>
-    <div class="source">Illustrative demand shape. Not measured customer volume.</div>
-    <aside class="notes-src">Demand for a capability can look flat until the category becomes real. Customers did not ask every taxi company for a perfect mobile request flow before Uber. The larger experience made the missing path visible. The same can happen here. When agents become normal in customer operations, software completed shipping jobs will move from unusual request to expected baseline. We should build before that ask becomes loud.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">12 / 18</span></div>
+    <div class="kicker">12 / The opportunity is already here</div>
+    <div class="already">
+      <div class="already-claim" data-reveal style="--d:.08s">Most orders are already created through API today</div>
+      <div class="share" data-reveal style="--d:.22s">
+        <div class="share-row"><div class="share-lbl"><span>API</span><span>Create · Quote · Book · Track</span></div><i class="share-bar" style="--w:100%;--d:.5s"></i></div>
+        <div class="share-row other"><div class="share-lbl"><span>Everything else</span><span>UI · Support · Admin</span></div><i class="share-bar" style="--w:9%;--d:1.1s"></i></div>
+      </div>
+    </div>
+    <div class="source">Directional. Exact split pending validation.</div>
+    <aside class="notes-src">This is not a greenfield AI bet. Most orders already enter Shippit through APIs. The commercial pipe is already machine led. Agents do not create this dependency. They amplify the gap between the strong create path and the control work that still requires a screen, an internal tool, or support. That is why the opportunity is broader than shipping a new chat interface.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">12 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="13">
-    <div class="kicker">10 / The current boundary</div>
-    <h2 data-reveal style="--d:.06s">Important jobs still stop at a screen</h2>
-    <div class="wall-stage">
-      <div class="job-lines" data-reveal style="--d:.18s">
-        <div class="job-line"><span>Onboard</span><i class="track"></i><b class="stop">UI / admin</b></div>
-        <div class="job-line"><span>Configure</span><i class="track"></i><b class="stop">UI / admin</b></div>
-        <div class="job-line"><span>Manage keys</span><i class="track"></i><b class="stop">UI</b></div>
-        <div class="job-line"><span>Estimate</span><i class="track"></i><b class="stop">Internal</b></div>
-      </div>
-      <div class="settings-wall" data-reveal style="--d:.3s"><div class="big">Every agent invents a scrape</div><p class="small">When the job only exists in Settings</p></div>
+    <div class="kicker">13 / Demand arrives late</div>
+    <h2 data-reveal style="--d:.06s">Customers aren&rsquo;t asking now. Suddenly everyone will.</h2>
+    <div class="spike" role="img" aria-label="Demand remains flat before rapidly increasing">
+      <div class="spike-bars"><i style="--h:4%;--delay:120ms"></i><i style="--h:4%;--delay:165ms"></i><i style="--h:4%;--delay:210ms"></i><i style="--h:4%;--delay:255ms"></i><i style="--h:4%;--delay:300ms"></i><i style="--h:4%;--delay:345ms"></i><i style="--h:4%;--delay:390ms"></i><i style="--h:4%;--delay:435ms"></i><i style="--h:4%;--delay:480ms"></i><i style="--h:4%;--delay:525ms"></i><i style="--h:4%;--delay:570ms"></i><i style="--h:4%;--delay:615ms"></i><i style="--h:4%;--delay:660ms"></i><i style="--h:4%;--delay:705ms"></i><i style="--h:4%;--delay:750ms"></i><i style="--h:4%;--delay:795ms"></i><i style="--h:4%;--delay:840ms"></i><i style="--h:4%;--delay:885ms"></i><i style="--h:4%;--delay:930ms"></i><i style="--h:4%;--delay:975ms"></i><i style="--h:4%;--delay:1020ms"></i><i style="--h:4%;--delay:1065ms"></i><i style="--h:4%;--delay:1110ms"></i><i style="--h:4%;--delay:1155ms"></i><i style="--h:4%;--delay:1200ms"></i><i style="--h:4%;--delay:1245ms"></i><i style="--h:4%;--delay:1290ms"></i><i style="--h:5%;--delay:1380ms;--dur:320ms"></i><i style="--h:8%;--delay:1470ms;--dur:320ms"></i><i style="--h:14%;--delay:1560ms;--dur:320ms"></i><i style="--h:23%;--delay:1650ms;--dur:320ms"></i><i style="--h:32%;--delay:1740ms;--dur:320ms"></i><i style="--h:44%;--delay:1830ms;--dur:320ms"></i><i style="--h:61%;--delay:1920ms;--dur:320ms"></i><i style="--h:76%;--delay:2010ms;--dur:320ms"></i><i style="--h:100%;--delay:2100ms;--dur:320ms"></i></div>
+      <div class="spike-mark"><div class="tri"></div><span>Merchants are here</span></div>
     </div>
-    <aside class="notes-src">The strongest first proof is onboarding. Create a company, create a merchant, create stores, apply configuration, establish a usable sandbox, and complete setup without waiting for Shippit. Today, important parts of that path still live in UI, admin, internal services, or support. Notification settings prove the asymmetry, but onboarding shows the size of the opportunity.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">13 / 18</span></div>
+    <div class="source">Capability demand stays quiet, then arrives as a spike. Build before the ask is loud. Illustrative shape.</div>
+    <aside class="notes-src">Demand for a capability can look flat until the category becomes real. Customers did not ask every taxi company for a perfect mobile request flow before Uber. The larger experience made the missing path visible. The same can happen here. When agents become normal in customer operations, software completed shipping jobs will move from unusual request to expected baseline. We should build before that ask becomes loud.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">13 / 22</span></div>
   </section>
 
-  <section class="slide" data-slide="14">
-    <div class="kicker">11 / Initial direction</div>
-    <h2 data-reveal style="--d:.06s">The work has an order</h2>
-    <div class="workstreams">
+  <section class="slide dark thesis" data-slide="14">
+    <div class="kicker">14 / The thesis</div>
+    <div class="thesis-lines"><span style="--i:0">MCP discovers.</span><span style="--i:1">APIs execute.</span><span style="--i:2">Identity makes it safe.</span></div>
+    <aside class="notes-src">This is the simplest way to remember the division of labour. MCP helps an agent find and call the available tools. The API remains the typed contract that executes the job. Identity determines who can do what, for which tenant, with what authority, and with what audit trail. MCP does not replace the API and it is not the first SKU. It depends on the jobs and the trust layer beneath it.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">14 / 22</span></div>
+  </section>
+
+  <section class="slide" data-slide="15" data-steps="1">
+    <div class="kicker">15 / Initial direction</div>
+        <div class="workstreams">
       <div class="work" style="--i:0"><div class="step-no">01</div><h3>Platform foundations</h3><p>Standards and enforcement</p></div>
       <div class="work" style="--i:1"><div class="step-no">02</div><h3>Capability surfacing</h3><p>Priority jobs</p></div>
       <div class="work" style="--i:2"><div class="step-no">03</div><h3>Consumer experience</h3><p>Usable contracts and tooling</p></div>
       <div class="work" style="--i:3"><div class="step-no">04</div><h3>Governance framework</h3><p>Change and ownership</p></div>
-      <div class="work" style="--i:4"><div class="step-no">05</div><h3>MCP delivery</h3><p>Discovery comes last</p></div>
+      <div class="work last" style="--i:4"><div class="step-no">05</div><h3>MCP delivery</h3><p>Discovery comes last</p></div>
     </div>
     <aside class="notes-src">This is the current direction, not a committed implementation plan. Platform foundations define the standards. Capability surfacing makes priority jobs real. Consumer experience makes the contract usable. Governance protects the contract over time. MCP then exposes those jobs to an agent environment. MCP comes last because discovery cannot compensate for missing or unsafe jobs.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">14 / 18</span></div>
-  </section>
-
-  <section class="slide" data-slide="15">
-    <div class="kicker">12 / Selected capability gaps</div>
-    <h2 data-reveal style="--d:.06s">The first opportunities remove human gates</h2>
-    <div class="gap-list" data-reveal style="--d:.18s">
-      <div class="gap-row"><span class="step-no">01</span><span class="gap-name">Company and merchant creation</span><span class="gap-now">Admin today</span></div>
-      <div class="gap-row"><span class="step-no">02</span><span class="gap-name">ETA and EDD retrieval</span><span class="gap-now">Internal today</span></div>
-      <div class="gap-row"><span class="step-no">03</span><span class="gap-name">Store API secret management</span><span class="gap-now">UI today</span></div>
-      <div class="gap-row"><span class="step-no">04</span><span class="gap-name">Company secrets visibility</span><span class="gap-now">UI today</span></div>
-    </div>
-    <div class="source">Selected examples for discovery. Inclusion does not imply every UI or admin capability becomes public.</div>
-    <aside class="notes-src">These are selected examples, not a promise to publish every internal or UI capability. Supported company and merchant creation could unlock software operated onboarding. ETA and EDD retrieval already has useful internal capability. Store secret management and company level secrets visibility are control surfaces that software operators need. Discovery will decide the boundary, authority, and consumer for each job.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">15 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">15 / 22</span></div>
   </section>
 
   <section class="slide" data-slide="16">
-    <div class="kicker">13 / Mission shape</div>
+    <div class="kicker">16 / Selected capability gaps</div>
+    <h2 data-reveal style="--d:.06s">The first thing to do: remove human gating</h2>
+    <div class="gap-list" data-reveal style="--d:.18s">
+      <div class="gap-row"><span class="step-no">01</span><span class="gap-name">Company and merchant creation</span><span class="gap-now">Admin today</span></div>
+      <div class="gap-row"><span class="step-no">02</span><span class="gap-name">Admin level settings</span><span class="gap-now">Internal today</span></div>
+      <div class="gap-row"><span class="step-no">03</span><span class="gap-name">Store API secret management</span><span class="gap-now">UI today</span></div>
+      <div class="gap-row"><span class="step-no">04</span><span class="gap-name">Company level settings</span><span class="gap-now">UI today</span></div>
+    </div>
+    <div class="source">Selected examples for discovery. Not every UI or admin capability becomes public.</div>
+    <aside class="notes-src">These are selected examples, not a promise to publish every internal or UI capability. Supported company and merchant creation could unlock software operated onboarding. ETA and EDD retrieval already has useful internal capability. Store secret management and company level secrets visibility are control surfaces that software operators need. Discovery will decide the boundary, authority, and consumer for each job.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">16 / 22</span></div>
+  </section>
+
+  <section class="slide" data-slide="17">
+    <div class="kicker">17 / Mission shape</div>
     <h2 data-reveal style="--d:.06s">Jobs and what must be true of every job</h2>
-    <div class="split-foundation">
-      <div class="split-side" data-reveal style="--d:.18s"><div class="cap">Capabilities</div><h3>The work software can finish</h3><div class="line">Quote · Book · Label</div><div class="line">Track · Recover</div><div class="line">Settings · Lifecycle</div></div>
-      <div class="split-side" data-reveal style="--d:.3s"><div class="cap">Foundations</div><h3>The trust around every job</h3><div class="line">Auth · Identity</div><div class="line">Errors · Contracts</div><div class="line">Versioning · Change</div></div>
+    <div class="stack">
+      <div class="tier-lbl" data-reveal style="--d:.16s"><span>Capabilities</span><em>The work software can finish</em></div>
+      <div class="caps" data-reveal style="--d:.24s"><div>Quote · Book · Label</div><div>Track · Recover</div><div>Settings · Lifecycle</div></div>
+      <div class="slab"><span>Auth · Identity</span><span>Errors · Contracts</span><span>Versioning · Change</span></div>
+      <div class="tier-lbl under" data-reveal style="--d:.9s"><span>Foundations</span><em>The trust around every job</em></div>
     </div>
     <aside class="notes-src">Capability surfacing and platform foundations are connected. A job needs a clear API surface, but it also needs consistent identity, errors, versioning, and change rules. The current capability surfacing document is a rough draft and discovery will change the scope. Domain teams remain essential because they own the business rules and will own the capability after the mission.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">16 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">17 / 22</span></div>
   </section>
 
-  <section class="slide dark thesis" data-slide="17">
-    <div class="kicker">14 / The thesis</div>
-    <div class="thesis-lines"><span style="--i:0">MCP discovers.</span><span style="--i:1">APIs execute.</span><span style="--i:2">Identity makes it safe.</span></div>
-    <aside class="notes-src">This is the simplest way to remember the division of labour. MCP helps an agent find and call the available tools. The API remains the typed contract that executes the job. Identity determines who can do what, for which tenant, with what authority, and with what audit trail. MCP does not replace the API and it is not the first SKU. It depends on the jobs and the trust layer beneath it.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">17 / 18</span></div>
+  <section class="slide" data-slide="18">
+    <div class="kicker">18 / Direction by version</div>
+    <h2 data-reveal style="--d:.06s">Versioning and Roles</h2>
+    <p class="sub" data-reveal style="--d:.14s">The gateway routes traffic. NextGen carries the contract.</p>
+    <div class="vtable" data-reveal style="--d:.22s">
+      <div class="th">Layer</div><div class="th">Direction</div><div class="th">Status</div>
+      <div class="layer">V3</div><div>Freeze new capability. Keep maintenance, security, and reliability alive.</div><div class="st">Operational support only.</div>
+      <div class="layer">V4</div><div>Narrow maintenance only. No drift into the main external answer.</div><div class="st">Limited constituency. Limited expansion.</div>
+      <div class="layer">V5</div><div>Internal BFF for the Demand UI. Not the public contract.</div><div class="st">Internal use only.</div>
+      <div class="layer">NextGen</div><div>Leads the external contract. Workflows, lifecycle, migration discipline.</div><div class="st">To validate and sponsor. A hypothesis, not a freeze.</div>
+    </div>
+    <aside class="notes-src">Direction by version. Hypothesis, not freeze. Direct voice: say what each layer does and does not do. V3, V4, V5, and NextGen need clean roles.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">18 / 22</span></div>
   </section>
 
-  <section class="slide close" data-slide="18">
-    <div class="kicker">15 / Direction</div>
+  <section class="slide" data-slide="19">
+    <div class="kicker">19 / Missing surface</div>
+    <h2 data-reveal style="--d:.06s">Build all missing endpoints.</h2>
+    <p class="sub" data-reveal style="--d:.14s">This lives in Settings today. It does not exist as an API.</p>
+    <div class="exhibit panel" data-reveal style="--d:.22s"><img src="./assets/notifications-settings.png" alt="Shippit settings: recipient notifications by order type, with toggles for standard, priority, and click and collect orders"></div>
+    <div class="source">UI can fan out notifications across stores. Agents cannot, until the job is typed.</div>
+    <aside class="notes-src">Build all missing endpoints. Settings notifications UI exists; the API does not. That contrast is the ask.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">19 / 22</span></div>
+  </section>
+
+  <section class="slide" data-slide="20">
+    <div class="kicker">20 / First opportunity</div>
+    <h2 data-reveal style="--d:.06s">Software-operated onboarding is the first opportunity.</h2>
+    <div class="onboard" data-reveal style="--d:.18s">
+      <div class="onboard-steps" aria-label="Software-operated onboarding sequence">
+        <div class="onboard-step"><span class="n">01</span><span class="t">Create company</span></div>
+        <div class="onboard-step"><span class="n">02</span><span class="t">Create merchant</span></div>
+        <div class="onboard-step"><span class="n">03</span><span class="t">Create stores</span></div>
+        <div class="onboard-step"><span class="n">04</span><span class="t">Apply store configuration</span></div>
+        <div class="onboard-step"><span class="n">05</span><span class="t">Create a usable sandbox</span></div>
+        <div class="onboard-step"><span class="n">06</span><span class="t">Complete setup</span></div>
+      </div>
+      <div class="onboard-outcome">A complete setup without waiting for Shippit.</div>
+    </div>
+    <aside class="notes-src">The first and largest proof is onboarding, not notification settings. Chris's extension of the operator thesis: an agent can fetch product context, create the company and merchant, create stores, apply configuration, establish a usable sandbox, and complete setup through APIs without waiting for Shippit.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">20 / 22</span></div>
+  </section>
+
+  <section class="slide" data-slide="21">
+    <div class="kicker">21 / Adoption is product work</div>
+    <h2 data-reveal style="--d:.06s">Adoption will be a big challenge.</h2>
+    <div class="phases">
+      <div class="phase" data-reveal style="--d:.2s"><div class="lab">Phase 01 / Decide</div><h3>Define the scope and the cohort.</h3><ul><li>First workflows and segments.</li><li>Migration boundary and success measure.</li></ul></div>
+      <div class="phase" data-reveal style="--d:.3s"><div class="lab">Phase 02 / Prove</div><h3>Build the safe first wins.</h3><ul><li>Sandbox, fixtures, validators.</li><li>Identity checks and lifecycle states.</li></ul></div>
+      <div class="phase" data-reveal style="--d:.4s"><div class="lab">Phase 03 / Move</div><h3>Make migration a program.</h3><ul><li>Named cohorts with playbooks.</li><li>Incentives, deadlines, fallback rules.</li></ul></div>
+      <div class="phase" data-reveal style="--d:.5s"><div class="lab">Phase 04 / Govern</div><h3>Make change a discipline.</h3><ul><li>Lifecycle policy and version windows.</li><li>Deprecation rules and adoption telemetry.</li></ul></div>
+    </div>
+    <aside class="notes-src">Adoption is product work. Decide, prove, move, govern. Waiting for customer permission is not a plan.</aside>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">21 / 22</span></div>
+  </section>
+
+  <section class="slide close" data-slide="22">
+    <div class="kicker">22 / Direction</div>
     <h1 data-reveal style="--d:.08s">Make Shippit safe for software to operate<br><span>so people can aim higher.</span></h1>
     <aside class="notes-src">That is the opportunity. We are not removing people from shipping. We are removing avoidable human gates from work software can perform safely. The practical question for each of us is where our current work still assumes someone will open the UI. That is where the next API opportunity may be hiding. I will stop there and leave the remaining time for conversation.</aside>
-    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">18 / 18</span></div>
+    <div class="footer"><span>API Mission · Bandung</span><span class="slide-no">22 / 22</span></div>
   </section>
 
   <div class="progress" id="progress"></div>
@@ -508,7 +744,7 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
 (() => {
   const slides=[...document.querySelectorAll('.slide')];
   const pad=n=>String(n).padStart(2,'0');
-  slides.forEach((s,n)=>{s.dataset.slide=String(n+1);const k=s.querySelector('.kicker');if(k&&/^\d+\s*\//.test(k.textContent))k.textContent=k.textContent.replace(/^\d+\s*\//,pad(n+1)+' /');const f=s.querySelector('.slide-no');if(f)f.textContent=pad(n+1)+' / '+pad(slides.length)});
+  slides.forEach((s,n)=>{s.dataset.slide=String(n+1);const k=s.querySelector('.kicker');if(k&&/^\d+\s*\//.test(k.textContent))k.textContent=k.textContent.replace(/^\d+\s*\//,pad(n+1)+' /');const f=s.querySelector('.slide-no');if(f)f.textContent=pad(n+1)+' / '+pad(slides.length);s.querySelectorAll('.fig').forEach(g=>g.textContent='Fig '+pad(n+1)+'.1')});
   const stage=document.getElementById('stage');
   const progress=document.getElementById('progress');
   const notesPanel=document.getElementById('notesPanel');
@@ -608,6 +844,8 @@ h2{font-size:clamp(30px,3.25vw,54px);line-height:1.05;letter-spacing:-.04em;max-
   stage.addEventListener('wheel',e=>{if(!onAudience())return;e.preventDefault();const step=clamp(e.deltaY/900,-.12,.12);if(step>0&&aTarget>=.999&&aCur>=.99){go(i+1);return}if(step<0&&aTarget<=.001&&aCur<=.01){go(i-1);return}setAudienceTarget(aTarget+step)},{passive:false});
   window.addEventListener('resize',()=>{if(onAudience())applyAudience(aCur)});
   window.addEventListener('hashchange',()=>{parseHash();render()});
+  let idleT=0;const wake=()=>{stage.classList.remove('idle');clearTimeout(idleT);idleT=setTimeout(()=>stage.classList.add('idle'),2200)};
+  ['mousemove','mousedown','touchstart'].forEach(ev=>document.addEventListener(ev,wake,{passive:true}));wake();
   parseHash();render();
 })();
 </script>

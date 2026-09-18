@@ -175,3 +175,25 @@ Historical 2024 public API discovery has been extracted into `API_RESEARCH_LEDGE
 - **Why:** The iframe approach (embedding the whole NextGen deck and faking key presses) was fragile and rendered black.
 - **Rejected:** Auto-play on slide entry. The step-driven reveal gives the speaker control and matches the source.
 - **Done:** `assets/expo-traffic-source.html` (2MB copy of the NextGen deck) deleted after Ashwin confirmed on 2026-09-16.
+
+## 2026-09-16 — Bandung deck, option 2 polish pass applied
+
+- **Decided:** Diagrams are borderless SVG in one idiom (1.8px strokes, Carbon caps labels, filled dots for nodes). Click builds via `data-steps` on slides 6, 7, 10, 12, 14. Chrome auto-hides after ~2s idle and is hidden in fullscreen.
+- **Rebuilt:** 7 (loop closes on click, travelling pulse), 10 (once-arrow vs animated dashed ring, After reveals on click), 11 (directional two-bar API vs everything else, no numbers), 12 (40 bars, spike on click, marker under spike), 13 (single thick wall the job lines run into), 14 (titles at rules, 05 MCP faint until click), 16 (capabilities row on black foundations slab).
+- **Rejected:** Option 3 full typographic pass (baseline grid, unified source position, 9/15/16 rhythm) — deferred until Ashwin reviews option 2.
+- **Open:** Push blocked: repo has no remote. Font files (Greycliff CF, Carbon) are in the local commit; licence check before any push.
+
+## 2026-09-17 — Bandung deck: ported NextGen slides, copy pass, reorder (23 slides)
+
+- **Ported** NextGen deck slides 10, 11, 19–22 (developer experience, operator experience, direction by version, onboarding, missing endpoints, adoption) into the Bandung deck, restyled to the borderless idiom. Slide 12 demand spike replaced with the NextGen slide-15 auto-play animation verbatim.
+- **Copy pass** applied with the `no-ai-slop` skill (github.com/petergyang/no-ai-slop). Ashwin approved all edits. Thesis/close fragments deliberately preserved as the deck's voice.
+- **Order now:** 1 title · 2 Delta 4 · 3 Uber · 4 ChatGPT tweet · 5 reply · 6 three parties · 7 loop · 8 globe · 9 developer exp · 10 operator exp · 11 event→continuous · 12 orders via API · 13 demand spike · 14 thesis · 15 work order · 16 capability gaps · 17 jobs/foundations · 18 versions · 19 missing endpoints · 20 onboarding · 21 adoption · 22 close. Builder/Operator and "jobs stop at a screen" slides removed (22 slides as of 2026-09-17).
+- **Open:** uncommitted since the first local commit; no remote; font licence question before push.
+
+## 2026-09-18 — Bandung deck: design direction chosen and folded
+
+- **Decided:** Direction F = "Signal" (white paper, faint layout grid, purple accent #5b3df5 — approximation, not the brand hex) + Carbon Bold for all text, all caps, no top-right slide number. Folded into `bandung-api-mission-presentation/index.html` as three appended style blocks (`#theme`, `#theme-type`, `#theme-readability`).
+- **Content edits carried in:** Delta 4 slide sub-lines removed; versions slide headed "Versioning and Roles" with one-line Direction cells; adoption slide two bullets per phase; slide 15 heading removed; slide 16 headed "The first thing to do: remove human gating" with rows 02 "Admin level settings" and 04 "Company level settings".
+- **Readability floor:** secondary text ≥ ~13px at 1280 wide (~20px at 1920); SVG labels enlarged. Footer and source lines deliberately left small.
+- **Rejected:** A Ink, B Editorial, D Blueprint, E Poster. `variants/` folder deleted after fold at Ashwin's instruction.
+- **Open:** still uncommitted since the first local commit; no remote; font licence question before push.
