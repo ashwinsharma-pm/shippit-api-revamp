@@ -190,10 +190,25 @@ Historical 2024 public API discovery has been extracted into `API_RESEARCH_LEDGE
 - **Order now:** 1 title · 2 Delta 4 · 3 Uber · 4 ChatGPT tweet · 5 reply · 6 three parties · 7 loop · 8 globe · 9 developer exp · 10 operator exp · 11 event→continuous · 12 orders via API · 13 demand spike · 14 thesis · 15 work order · 16 capability gaps · 17 jobs/foundations · 18 versions · 19 missing endpoints · 20 onboarding · 21 adoption · 22 close. Builder/Operator and "jobs stop at a screen" slides removed (22 slides as of 2026-09-17).
 - **Open:** uncommitted since the first local commit; no remote; font licence question before push.
 
+## 2026-09-18 — Five leadership-deck alternatives
+
+- **Decided:** preserve the future-first vision while testing five distinct leadership arguments: the broad Next Shippit narrative, growth without proportional effort, customers using more while seeing less UI, enterprise trust across API and agent access, and future organisation/capacity planning.
+- **Why:** Owen's review asked for recognisable Shippit examples that help commercial and operational leaders connect the technology shift to customer behaviour, cost-to-serve, investment choices and future team planning.
+- **Built:** five standalone, self-contained HTML decks plus a comparison page in `leadership-five-versions/`. Each deck has 18–19 slides, presenter notes, source links, overview navigation, fullscreen, print and responsive reading mode.
+- **Evidence discipline:** CartonCloud is used as reported demand for API account creation, not MCP. Staffing, savings, pricing, intelligence products and delivery dates remain hypotheses or questions. No unverified Stripe/API-share statistics or 5× premium claim is presented as fact.
+- **Preserved:** the existing rebuilt presentation and Railway deployment were not changed.
+
 ## 2026-09-18 — Bandung deck: design direction chosen and folded
 
 - **Decided:** Direction F = "Signal" (white paper, faint layout grid, purple accent #5b3df5 — approximation, not the brand hex) + Carbon Bold for all text, all caps, no top-right slide number. Folded into `bandung-api-mission-presentation/index.html` as three appended style blocks (`#theme`, `#theme-type`, `#theme-readability`).
 - **Content edits carried in:** Delta 4 slide sub-lines removed; versions slide headed "Versioning and Roles" with one-line Direction cells; adoption slide two bullets per phase; slide 15 heading removed; slide 16 headed "The first thing to do: remove human gating" with rows 02 "Admin level settings" and 04 "Company level settings".
 - **Readability floor:** secondary text ≥ ~13px at 1280 wide (~20px at 1920); SVG labels enlarged. Footer and source lines deliberately left small.
 - **Rejected:** A Ink, B Editorial, D Blueprint, E Poster. `variants/` folder deleted after fold at Ashwin's instruction.
-- **Open:** still uncommitted since the first local commit; no remote; font licence question before push.
+- **Done 2026-09-18:** committed (e1e9956) and pushed to private repo github.com/ashwinsharma-pm/shippit-api-revamp (remote `origin`, branch `main`). Fonts kept in repo at Ashwin's instruction. Repo made PUBLIC on 2026-09-18 at Ashwin's instruction to enable GitHub Pages (free plan blocks Pages on private repos). Pages URL: https://ashwinsharma-pm.github.io/shippit-api-revamp/ (root redirects to the deck). Other untracked files in the parent folder remain uncommitted.
+- **Claude Artifact (2026-09-18):** deck published as a Claude artifact at https://claude.ai/code/artifact/a9a3b96e-135a-41f6-a371-3b8a7d507f49 (private until shared from the page's share menu). Source for the artifact build lives at `bandung-api-mission-presentation/output/artifact/` (page + assets, fonts shipped as supporting files). Republish from this path to keep the URL.
+
+## 2026-09-22 — Team slide
+
+- **Added** slide 15 "The Team" after the thesis: Kain (Engineering), Ashwin (Product), Chris (Engineering), two dashed TBD seats. Roles were Claude's guesses, confirmed by Ashwin. Deck is 23 slides.
+- **Assets:** resized 600px copies `assets/team-{kain,ashwin,chris}.png`; originals in `assets/The Team/` are gitignored along with `output/` (artifact build).
+- **Shipped:** commit b82c81d pushed to GitHub Pages; Claude artifact republished at the same URL.
