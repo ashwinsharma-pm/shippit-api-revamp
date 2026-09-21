@@ -218,3 +218,4 @@ Historical 2024 public API discovery has been extracted into `API_RESEARCH_LEDGE
 - **Added** slide 21 (image only) after "Build all missing endpoints": Stripe's "Set up your AI tool to integrate Stripe" onboarding screen. Sandbox key values pixelated before publishing because the deck is public. Deck is 24 slides.
 - **Thesis (slide 14)** trimmed to "MCP discovers. / APIs execute." at Ashwin's instruction. Title slide 1 still previews all three lines including "Identity makes it safe" — flagged, not changed.
 - **Shipped:** commit 2e97e20 to GitHub Pages; Claude artifact republished at the same URL.
+- **2026-09-22 later:** title-slide preview trimmed to two lines to match slide 14; close (slide 24) now reads "Make Shippit addressable for software to operate", second line removed. Commit 94de4f4 pushed; artifact republished.
