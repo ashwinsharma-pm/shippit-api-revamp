@@ -212,3 +212,9 @@ Historical 2024 public API discovery has been extracted into `API_RESEARCH_LEDGE
 - **Added** slide 15 "The Team" after the thesis: Kain (Engineering), Ashwin (Product), Chris (Engineering), two dashed TBD seats. Roles were Claude's guesses, confirmed by Ashwin. Deck is 23 slides.
 - **Assets:** resized 600px copies `assets/team-{kain,ashwin,chris}.png`; originals in `assets/The Team/` are gitignored along with `output/` (artifact build).
 - **Shipped:** commit b82c81d pushed to GitHub Pages; Claude artifact republished at the same URL.
+
+## 2026-09-22 — Stripe reference slide, thesis trim
+
+- **Added** slide 21 (image only) after "Build all missing endpoints": Stripe's "Set up your AI tool to integrate Stripe" onboarding screen. Sandbox key values pixelated before publishing because the deck is public. Deck is 24 slides.
+- **Thesis (slide 14)** trimmed to "MCP discovers. / APIs execute." at Ashwin's instruction. Title slide 1 still previews all three lines including "Identity makes it safe" — flagged, not changed.
+- **Shipped:** commit 2e97e20 to GitHub Pages; Claude artifact republished at the same URL.
